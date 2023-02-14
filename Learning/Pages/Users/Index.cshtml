@@ -3,8 +3,9 @@
 @{
 }
 <br />
-<h2>List of Users</h2>
-<a class='btn btn-primary btn-sm' href='/Users/Create'>Req new user</a>
+<h2>Admin page</h2>
+<p>Welcome</p>
+<!--<a class='btn btn-primary btn-sm' href='/Users/Insert'>Req new user</a>-->
 <table class="table">
     <thead>
         <tr>
@@ -30,7 +31,7 @@
                 <td>@i.phone</td>
                 <td>@i.data_time</td>
                 <td>
-                    <a href="/Users/Edit?id=@i.id">Edit</a>
+                    <a href="/Users/Email?email=@i.email">Email</a>
                     <a href="/Users/Delete?id=@i.id">Delete</a>
                 </td>
             </tr>

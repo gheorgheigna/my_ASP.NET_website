@@ -1,0 +1,123 @@
+﻿@page
+@model Learning.Pages.Users.TutorialModel
+@{
+}<header>
+    <a class='btn btn-primary btn-sm' href='/Users/Edit_User?id=@Model.id '>Edit your profile</a>
+   
+</header>
+<div class="text-center">
+    <h1 class="display-4">Welcome, @Model.usersInfo.fullname</h1>
+    <h3>to my C# website learning  </h3>
+</div>
+
+<h2>C#</h2>
+<div>
+   
+    <p>C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.</p>
+    <p>C# is used to develop web apps, desktop apps, mobile apps, games and much more.</p>
+    <p>It is an object-oriented programming language created by Microsoft that runs on the .NET Framework.</p>
+    <p>C# has roots from the C family, and the language is close to other popular languages like C++ and Java</p>
+    <p>The first version was released in year 2002. The latest version, C# 11, was released in November 2022.</p>
+    <p>C# is used for:</p>
+    <ul>
+        <li>Mobile applications</li>
+        <li>Desktop applications</li>
+        <li>Web applications</li>
+        <li>Web services</li>
+        <li>Web sites</li>
+    </ul>
+    
+    <h2>Why Use C#?</h2>
+    <ul>
+        <li>It is one of the most popular programming language in the world</li>
+        <li>It is easy to learn and simple to use</li>
+        <li>It has a huge community support</li>
+        <li>C# is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs</li>
+        <li>As C# is close to C, C++ and Java, it makes it easy for programmers to switch to C# or vice versa</li>
+    </ul>
+</div>
+<div class="text-center">
+    <h1 class="display-4">Exercices</h1>
+    
+</div>
+<div>
+    <h4>Let make some exercices!</h4>
+    <form id="form1" runat="server" method="post">
+        <div >
+            <label> Please insert a string and select an action</label>
+            <div >
+                <input type="text"  name="string" value="" />
+            </div>
+        </div>
+        <input type="radio" name="Menu_items" value="uppercase" id="test" checked="checked" />
+        uppercase
+        <input type="radio" name="Menu_items" value="reverse" />reverse the string
+        <input type="radio" name="Menu_items" value="no_of_words" />No of words
+        <input type="radio" name="Menu_items" value="titlecase" />titlecase
+        <input type="submit" value="Test" class="btn btn-primary" />
+        <asp:Button ID="btn" runat="server" Text="value" />
+    </form>
+    
+    
+</div>
+<div>
+    <p>Here you will see the result of action and the code </p>
+</div>
+<div>
+    
+    @switch(Model.items)
+    {
+        case 0:
+         {      <h3>Result:</h3>
+                <p>@Model.selectedItems</p>
+                <h3>Code:</h3>
+                <p>selectedItems = Input_string.ToUpper();</p>
+           
+            break;
+         }
+        case 1:
+            {
+                 <h3>Result:</h3>
+                 <p>@Model.reverseString</p>
+                <h3>Code:</h3>
+                <p>@Model.selectedItems</p>
+                <p>
+                    string originalString = Input_string;
+                    reverseString = string.Empty;
+                    for (int i = originalString.Length - 1; i >= 0; i--)
+                    {
+                    reverseString += originalString[i];
+                    }
+                    items = 1;
+                </p>
+              
+                break;
+            }
+        case 2:
+            {
+                <h3>Result:</h3>
+                <p>@Model.no_Word</p>
+                <h3>Code:</h3>
+                <p>while (a = Input_string.Length - 1)
+                        {
+                            if (Input_string[a] == ' ')
+                            {
+                                no_Word++;
+                            }
+                            a++;
+                        }
+                </p>
+               
+                break;
+            }
+        case 3:
+            {
+                <h3>Result:</h3>
+                <p>title_case= titlecase.ToTitleCase(Input_string);</p>
+                <h3>Code:</h3>
+                <p>@Model.title_case</p>
+                break;
+            }
+         default :break;
+    }
+</div>

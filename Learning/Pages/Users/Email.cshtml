@@ -1,0 +1,54 @@
+﻿@page
+@model Learning.Pages.Users.EmailModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request for Assistance</title>
+</head>
+<body>
+    <h2>Submit Email Request for Assistance</h2>
+    <form method="post">
+          <div class="row mb-3">
+             <label class="col-sm-3 col-form-label">admin email</label>
+                <div class="col-sm-6">
+                 <input type="text" class="form-control" name="adminemail" value="" />
+                </div>
+           </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Password</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="password" value="" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Client email</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="adminemail" value="@Model.emailclient" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Subjetc</label>
+            <div class="col-sm-6">
+            <input type="text" class="form-control" name="subject" value="" />
+             </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Details about your problem:</label>
+            <div class="col-sm-6">
+                <textarea class="form-control" name="emailbody" cols="45" rows="4"></textarea>
+            </div>
+        </div>
+        <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Users/Index" role="button">Cancel</a>
+        </div>
+    </div>
+    </form>
+    @Model.errorMessage;
+</body>
+</html>
