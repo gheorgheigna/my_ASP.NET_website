@@ -5,6 +5,7 @@ they must to have an account or if not, can create one
 <br>
 be logged
 <br>
+can edit account information 
 <br>
 <br>
 admin (myself)
@@ -13,7 +14,7 @@ can log in on my website
 <br>
 view all the users account
 <br>
-edit or delete them
+delete them
 <br>
 send an email to users
 <br>
